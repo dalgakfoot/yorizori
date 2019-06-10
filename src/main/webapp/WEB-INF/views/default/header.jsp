@@ -16,7 +16,7 @@
 <hr>
 	<ul>
 		<li><a href="main">HOME</a></li>
-		<li><a href="#">게시판</a></li>
+		<li><a href="free_list">게시판</a></li>
 		<li><a href="#">레시피</a></li>
 		<!-- 이달의 레시피,  -->
 		
