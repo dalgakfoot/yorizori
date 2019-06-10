@@ -7,7 +7,7 @@
 <meta charset="EUC-KR">
 <title>Insert title here</title>
 <style type="text/css">
-	ul li{display:inline; padding:0 10px;}
+	ul li{display:inline; padding:0 50px;}
 </style>
 </head>
 <body>
@@ -21,7 +21,7 @@
 		<!-- 이달의 레시피,  -->
 		
 		<li><a href="#">랭킹</a></li>
-		<li><a href="#">MY홈</a></li>
+		<li><a href="myPage">MY홈</a></li>
 	</ul>
 <hr>
 

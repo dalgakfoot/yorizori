@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	pageEncoding="EUC-KR"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,15 +8,25 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:import url="../default/header.jsp"/>
-<div align="center">
-<h2>로그인 페이지</h2>
-<form action="#">
-<input type="text" placeholder="이메일 입력"><br>
-<input type="text" placeholder="비밀번호 입력"><br>
-<input type="submit" value="로그인">
+	<c:import url="../default/header.jsp" />
+	<div align="center">
+		<h2>로그인 페이지</h2>
+		<form action="#">
+			<table border="1">
+				<tr>
+					<th><input type="text" placeholder="이메일 입력"></th>
+					<th rowspan="2"><input type="submit" value="로그인" style="height: 60px;"></th>
+				</tr>
+				<tr>
+					<th>
+						<input type="text" placeholder="비밀번호 입력">
+					</th>
+				</tr>
+
+</table>
+아직 회원이 아니신가요? <button type="button" onclick="location='register.jsp'">회원가입</button>
 </form>
 </div>
-<c:import url="../default/footer.jsp"/>
+<c:import url="../default/footer.jsp" />
 </body>
 </html>
