@@ -27,9 +27,15 @@ public class BoardDAO {
 	
 	
 	//리스트
-	public ArrayList<BoardDTO> list(){
-		String sql="select * from final_board order by num desc";
-	}
+//	public ArrayList<BoardDTO> list(){
+//		String sql="select * from final_board order by num desc";
+//		
+//		try {
+//			
+//			
+//		}
+//		
+//	}
 	
 	//내용보기
 	
