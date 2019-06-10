@@ -23,9 +23,9 @@ public class MainController {
 
 	
 	//.......................자유게시판 시작.............................
-	@RequestMapping("free_list")	 	
+	@RequestMapping("board_list")	 	
 	public String board() {				
-		return "/board/free_list";
+		return "/board/list";
 	}
 	
 	@RequestMapping("board_write")
