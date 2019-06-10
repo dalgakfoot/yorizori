@@ -42,7 +42,15 @@ public class MemberController {
 			HttpSession session = request.getSession();
 			session.setAttribute("userId", request.getParameter("id"));
 			System.out.println("技记 积己 : "+session.getAttribute("userId"));
+			return "redirect:successLogin";
 		}
-		return "redirect:successLogin";
+		return "redirct:login";
 	}
+	
+	
+	
+
+
+
+
 }

@@ -8,6 +8,8 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.ui.Model;
 
+import com.care.member_dto.MemberDAO;
+
 public class MUserCheckImpl implements MemberService{
 
 	@Override
