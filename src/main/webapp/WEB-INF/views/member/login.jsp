@@ -1,6 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
+<<<<<<< HEAD
+    pageEncoding="EUC-KR"%>
+    
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+=======
 	pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+>>>>>>> 19d30086b35c5dfbefda8a4fd278f5c59e2c736c
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,6 +20,32 @@
 
 </head>
 <body>
+<<<<<<< HEAD
+
+	<div>
+		
+		<form action="user_check" method="post">
+		<table>
+			
+			<tr>
+				<td><input type="text" name="id" id="id"></td>
+				<td rowspan="2"><input type="submit" value="로그인"></td>
+			</tr>
+			
+			<tr>
+				<td><input type="text" name="pw" id="pw"></td>
+			</tr>
+			
+			<tr>
+				<td colspan="2"><a href="">회원 가입</a></td>
+			</tr>
+		
+		</table>
+		</form>
+	
+	</div>
+
+=======
 	<c:import url="../default/header.jsp" />
 	<div align="center">
 		<h2>로그인 페이지</h2>
@@ -34,5 +66,6 @@
 </form>
 </div>
 <c:import url="../default/footer.jsp" />
+>>>>>>> 19d30086b35c5dfbefda8a4fd278f5c59e2c736c
 </body>
 </html>
