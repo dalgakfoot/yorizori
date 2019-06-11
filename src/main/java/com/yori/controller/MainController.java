@@ -4,10 +4,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.care.board_service.BoardService;
+import com.care.board_service.Board_SaveImpl;
 
 @Controller
 public class MainController {
+	private BoardService bs;
 	
 	
 	@RequestMapping("main")
@@ -50,6 +55,17 @@ public class MainController {
 	@RequestMapping("board_modify")
 	public String board_modify() {
 		return "/board/board_info";
+	}
+	
+	@RequestMapping("writeSave")
+	public String writeSave(HttpServletRequest request, Model model) {
+		model.addAttribute("request",request);
+		bs = new Board_SaveImpl();
+		int result = bs.execute(model);
+		if(result==0) {
+			return "redirect:board_write";
+		}
+		return "/board/list";
 	}
 	//.......................자유게시판 끝.............................
 	

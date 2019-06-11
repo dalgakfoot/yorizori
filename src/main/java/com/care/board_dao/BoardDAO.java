@@ -1,8 +1,10 @@
 package com.care.board_dao;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import com.care.board_dto.BoardDTO;
@@ -41,6 +43,23 @@ public class BoardDAO {
 	
 	
 	//저장
+	public int writeSave(BoardDTO dto) {
+		String sql = "insert into final_board(num,nick,title,content,pdate,hit) values(final_board_num.nextval,?,?,?,sysdate,0)";
+		
+		int result=0;
+		try {
+			con = DriverManager.getConnection(url,user,pwd);
+			ps = con.prepareStatement(sql);
+			ps.setString(1, dto.getNick());
+			ps.setString(2, dto.getTitle());
+			ps.setString(3, dto.getContent());
+			result = ps.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}	
+		
+		return result;
+	}
 	
 	//수정
 	

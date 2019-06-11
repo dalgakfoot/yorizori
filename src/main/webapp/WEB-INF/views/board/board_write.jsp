@@ -21,7 +21,7 @@
 <body>
 	<!-- 게시글 등록 페이지, 닉네임 제목 내용 조회수 날짜 -->
 	<div align="center" class="content-modiwrite">
-		<form action="#">
+		<form action="writeSave">
 			<h1>게시글 등록</h1>
 			<table border="1">
 				<tr align="right">
@@ -73,7 +73,7 @@
 		   	document.getElementById("form").submit();}
 		
 		function pasteHTML(filepath){
-			var sHTML = '<img src="<%=request.getContextPath()%>/fileUpDown/'+filepath+'">';
+			var sHTML = '<img src="<%=request.getContextPath()%>/fileUpDown/' + filepath+'">';
 					oEditors.getById["content"].exec("PASTE_HTML", [ sHTML ]);
 				}
 	</script>
