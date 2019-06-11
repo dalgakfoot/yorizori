@@ -29,17 +29,74 @@ public class BoardDAO {
 	
 	
 	//리스트
-//	public ArrayList<BoardDTO> list(){
-//		String sql="select * from final_board order by num desc";
-//		
-//		try {
-//			
-//			
-//		}
-//		
-//	}
+	public ArrayList<BoardDTO> list(){
+		String sql="select * from final_board order by num desc";
+		
+		ArrayList<BoardDTO> arrdto = new ArrayList<BoardDTO>();
+		try {
+			con = DriverManager.getConnection(url,user,pwd);
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			while(rs.next()) {
+			BoardDTO dto = new BoardDTO();
+			dto.setNum(rs.getInt("num"));
+			dto.setNick(rs.getString("nick"));
+			dto.setTitle(rs.getString("title"));
+			dto.setContent(rs.getString("content"));
+			dto.setPdate(rs.getString("pdate"));
+			dto.setHit(rs.getInt("hit"));
+			arrdto.add(dto);
+			}
+			}catch (SQLException e) {
+				e.printStackTrace();
+			}
+		
+		return arrdto;
+		
+	}
 	
 	//내용보기
+	public BoardDTO view(int num) {
+		
+		upHit(num);
+		
+		String sql = "select * from final_board where num="+num;
+		BoardDTO dto = new BoardDTO();
+		
+		try {
+			con = DriverManager.getConnection(url,user,pwd);
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			if(rs.next()) {
+				dto.setNum(rs.getInt("num"));
+				dto.setNick(rs.getString("nick"));
+				dto.setTitle(rs.getString("title"));
+				dto.setContent(rs.getString("content"));
+				dto.setPdate(rs.getString("pdate"));
+				dto.setHit(rs.getInt("hit"));
+			}
+			}catch (SQLException e) {
+				e.printStackTrace();
+			}
+		
+		return dto;
+		
+	}
+	
+	//조회수
+	
+	public void upHit(int num) {
+		String sql = "update final_board set hit=hit+1 where num="+num;
+		
+		try {
+			con = DriverManager.getConnection(url,user,pwd);
+			ps = con.prepareStatement(sql);
+			ps.executeUpdate();
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+	}
 	
 	
 	//저장
@@ -61,7 +118,52 @@ public class BoardDAO {
 		return result;
 	}
 	
-	//수정
+	//수정보기
+	public BoardDTO modiview(int num) {
+		
+		String sql = "select * from final_board where num="+num;
+		BoardDTO dto = new BoardDTO();
+		
+		try {
+			con = DriverManager.getConnection(url,user,pwd);
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			if(rs.next()) {
+				dto.setNum(rs.getInt("num"));
+				dto.setNick(rs.getString("nick"));
+				dto.setTitle(rs.getString("title"));
+				dto.setContent(rs.getString("content"));
+				dto.setPdate(rs.getString("pdate"));
+				dto.setHit(rs.getInt("hit"));
+			}
+			}catch (SQLException e) {
+				e.printStackTrace();
+			}
+		
+		return dto;
+		
+	}
+	
+	
+	//수정저장
+	public int modiSave(BoardDTO dto) {
+		String sql = "update final_board set title=?, content=? where num=?";
+		
+		int result=0;
+		try {
+			con = DriverManager.getConnection(url,user,pwd);
+			ps = con.prepareStatement(sql);
+			ps.setString(1, dto.getTitle());
+			ps.setString(2, dto.getContent());
+			ps.setInt(3, dto.getNum());
+			result = ps.executeUpdate();
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}	
+		
+		return result;
+		
+	}
 	
 	//삭제
 	

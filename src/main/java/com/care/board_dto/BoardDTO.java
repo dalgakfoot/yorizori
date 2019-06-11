@@ -7,6 +7,7 @@ public class BoardDTO {
 	private String content;
 	private int hit;
 	private String pdate;
+	
 	public int getNum() {
 		return num;
 	}
