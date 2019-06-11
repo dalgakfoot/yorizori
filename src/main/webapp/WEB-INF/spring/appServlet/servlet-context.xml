@@ -36,6 +36,6 @@
 	
 	<context:component-scan base-package="com.yori.controller" />
 	
-	<mvc:resources location="/smarteditor/" mapping="smarteditor/**"></mvc:resources>
+	<mvc:resources location="/smarteditor/" mapping="smarteditor/**"/>
 	
 </beans:beans>

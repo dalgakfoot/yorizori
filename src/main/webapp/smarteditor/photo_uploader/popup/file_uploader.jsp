@@ -7,7 +7,7 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%
 
-String path = request.getSession().getServletContext().getRealPath("fileUpDown"); // 이미지가 저장될 주소
+String path = request.getSession().getServletContext().getRealPath("/resources/fileUpDown"); // 이미지가 저장될 주소
 
 String filename = "";
 
@@ -58,6 +58,8 @@ if(request.getContentLength() > 10*1024*1024 ){
 %>
 
 <script type="text/javascript">
+
+
 	function fileAttach(){ 
 		f = document.fileform;
 		fpath = f.path.value;
