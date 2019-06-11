@@ -23,9 +23,9 @@ public class MainController {
 
 	
 	//.......................자유게시판 시작.............................
-	@RequestMapping("free_list")	 	
+	@RequestMapping("board_list")	 	
 	public String board() {				
-		return "/board/free_list";
+		return "/board/list";
 	}
 	
 	@RequestMapping("board_write")
@@ -37,9 +37,9 @@ public class MainController {
 		return "/board/board_write";
 	}
 	
-	@RequestMapping("board_info")   // 해당게시글 보기
-	public String board_info() {
-		return "/board/board_info";
+	@RequestMapping("view")   // 해당게시글 보기
+	public String view() {
+		return "/board/view";
 	}
 	
 	@RequestMapping("board_delete")
