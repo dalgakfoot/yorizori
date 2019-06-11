@@ -73,9 +73,7 @@
 		   	document.getElementById("form").submit();}
 		
 		function pasteHTML(filepath){
-			var sHTML = '<img src="<%=request.getContextPath()%>
-				/fileUpDown/'
-							+ filepath + '">';
+			var sHTML = '<img src="<%=request.getContextPath()%>/fileUpDown/'+filepath+'">';
 					oEditors.getById["content"].exec("PASTE_HTML", [ sHTML ]);
 				}
 	</script>
