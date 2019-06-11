@@ -22,7 +22,7 @@
 <body>
 	<!-- 게시글 등록 페이지, 닉네임 제목 내용 조회수 날짜 -->
 	<div align="center">
-		<form action="#" id="form">
+		<form action="writeSave" id="form">
 			<h1>게시글 등록</h1>
 			<table border="1">
 				<tr align="right">
