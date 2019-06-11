@@ -1,16 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-<<<<<<< HEAD
-    pageEncoding="EUC-KR"%>
-    
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-=======
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
->>>>>>> 19d30086b35c5dfbefda8a4fd278f5c59e2c736c
+
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,7 +15,7 @@
 
 </head>
 <body>
-<<<<<<< HEAD
+
 
 	<div>
 		
@@ -29,7 +24,7 @@
 			
 			<tr>
 				<td><input type="text" name="id" id="id"></td>
-				<td rowspan="2"><input type="submit" value="·Î±×ÀÎ"></td>
+				<td rowspan="2"><input type="submit" value="ë¡œê·¸ì¸"></td>
 			</tr>
 			
 			<tr>
@@ -37,7 +32,7 @@
 			</tr>
 			
 			<tr>
-				<td colspan="2"><a href="">È¸¿ø °¡ÀÔ</a></td>
+				<td colspan="2"><a href="">íšŒì› ê°€ì…</a></td>
 			</tr>
 		
 		</table>
@@ -45,27 +40,27 @@
 	
 	</div>
 
-=======
+
 	<c:import url="../default/header.jsp" />
 	<div align="center">
-		<h2>·Î±×ÀÎ ÆäÀÌÁö</h2>
+		<h2>ë¡œê·¸ì¸ í˜ì´ì§€</h2>
 		<form action="#">
 			<table border="1">
 				<tr>
-					<th><input type="text" placeholder="ÀÌ¸ŞÀÏ ÀÔ·Â"></th>
-					<th rowspan="2"><input type="submit" value="·Î±×ÀÎ" style="height: 60px;"></th>
+					<th><input type="text" placeholder="ì´ë©”ì¼ ì…ë ¥"></th>
+					<th rowspan="2"><input type="submit" value="ë¡œê·¸ì¸" style="height: 60px;"></th>
 				</tr>
 				<tr>
 					<th>
-						<input type="text" placeholder="ºñ¹Ğ¹øÈ£ ÀÔ·Â">
+						<input type="text" placeholder="ë¹„ë°€ë²ˆí˜¸ ì…ë ¥">
 					</th>
 				</tr>
 
 </table>
-¾ÆÁ÷ È¸¿øÀÌ ¾Æ´Ï½Å°¡¿ä? <button type="button" onclick="location.href='register'" class="btn btn-primary">È¸¿ø°¡ÀÔ</button>
+ì•„ì§ íšŒì›ì´ ì•„ë‹ˆì‹ ê°€ìš”? <button type="button" onclick="location.href='register'" class="btn btn-primary">íšŒì›ê°€ì…</button>
 </form>
 </div>
 <c:import url="../default/footer.jsp" />
->>>>>>> 19d30086b35c5dfbefda8a4fd278f5c59e2c736c
+
 </body>
 </html>
