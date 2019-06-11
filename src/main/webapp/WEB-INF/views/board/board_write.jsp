@@ -20,8 +20,13 @@
 
 <body>
 	<!-- 게시글 등록 페이지, 닉네임 제목 내용 조회수 날짜 -->
+<<<<<<< HEAD
 	<div align="center" class="content-modiwrite">
 		<form action="#" id="form">
+=======
+	<div align="center">
+		<form action="writeSave" id="form">
+>>>>>>> c3a8270de092fea86a10666f73f885590903b856
 			<h1>게시글 등록</h1>
 			<table border="1">
 				<tr align="right">
