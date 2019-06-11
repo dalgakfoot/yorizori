@@ -8,12 +8,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html" ; charset="UTF-8" />
 <title>Insert title here</title>
-<script type="text/javascript" src="<%=request.getContextPath()%>/smarteditor/js/service/HuskyEZCreator.js" charset="utf-8"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/smarteditor/js/HuskyEZCreator.js" charset="utf-8"></script>
 <!-- <script type="text/javascript"
 	src="/yorizori/src/main/webapp/resources/SE2/js/HuskyEZCreator.js"
 	charset="utf-8"></script> -->
 <script type="text/javascript"
-	src="/yorizori/src/main/webapp/resources/SE2/photo_uploader/plugin/hp_SE2M_AttachQuickPhoto.js"
+	src="/yorizori/src/main/webapp/smarteditor/photo_uploader/plugin/hp_SE2M_AttachQuickPhoto.js"
 	charset="utf-8"></script>
 <link href="style.css" rel="stylesheet">
 </head>
@@ -29,17 +29,17 @@
 				<tr>
 					<th colspan="2">닉네임</th>
 					<th colspan="2"><input type="text" name="nick"
-						placeholder="닉네임 받아오는 곳" size="120"></th>
+						placeholder="닉네임 받아오는 곳" size="100"></th>
 				</tr>
 
 				<tr>
 					<th colspan="2">제목</th>
 					<th colspan="2"><input type="text" name="title"
-						placeholder="제목을 입력해주세요." size="120"></th>
+						placeholder="제목을 입력해주세요." size="100"></th>
 				</tr>
 				<tr>
 					<th colspan="2">내용</th>
-					<th colspan="2" ><textarea name="content" id="content" cols="300" rows="20"></textarea></th>
+					<th colspan="2" ><textarea name="content" id="content" cols="100" row="20"></textarea></th>
 				</tr>
 				<tr align="right">
 					<th colspan="4"><input type="button" onclick="submitContents();" id="save" value="게시글 등록">
@@ -76,7 +76,7 @@
 		   }
 		
 		 function pasteHTML(filepath){
-			var sHTML = '<img src="<%=request.getContextPath()%>/fileUpDown/'+filepath+'">';
+			var sHTML = '<img src="<%=request.getContextPath()%>/resources/fileUpDown/'+filepath+'">';
 					oEditors.getById["content"].exec("PASTE_HTML", [ sHTML ]);
 				} 
 	</script>
