@@ -21,11 +21,10 @@
 <body>
 	<!-- 게시글 등록 페이지, 닉네임 제목 내용 조회수 날짜 -->
 	<div align="center" class="content-modiwrite">
-		<form action="writeSave">
+		<form action="#" id="form">
 			<h1>게시글 등록</h1>
 			<table border="1">
 				<tr align="right">
-
 
 					<th colspan="4">조회수 <input type="text" name="hit"
 						placeholder="조회수 받아오는 곳"> 등록 날짜 <input type="text"
@@ -58,7 +57,7 @@
 		nhn.husky.EZCreator.createInIFrame({
 		oAppRef: oEditors,
 		elPlaceHolder: "content", //textarea에서 지정한 id와 일치해야 합니다.
-		sSkinURI: "/project_board/SE2/SmartEditor2Skin.html",
+		sSkinURI: "/yorizori/src/main/webapp/resources/SE2/SmartEditor2Skin.html",
 		htParams : {
 			bUseToolbar : true,	
 			bUseVerticalResizer : true,	
@@ -73,7 +72,7 @@
 		   	document.getElementById("form").submit();}
 		
 		function pasteHTML(filepath){
-			var sHTML = '<img src="<%=request.getContextPath()%>/fileUpDown/' + filepath+'">';
+			var sHTML = '<img src="<%=request.getContextPath()%>/fileUpDown/'+filepath+'">';
 					oEditors.getById["content"].exec("PASTE_HTML", [ sHTML ]);
 				}
 	</script>
