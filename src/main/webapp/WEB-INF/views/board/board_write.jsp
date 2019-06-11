@@ -25,12 +25,7 @@
 		<form action="#" id="form">
 			<h1>게시글 등록</h1>
 			<table border="1">
-				<tr align="right">
-
-					<th colspan="4">조회수 <input type="text" name="hit"
-						placeholder="조회수 받아오는 곳"> 등록 날짜 <input type="text"
-						placeholder="날짜 받아오는 곳입니다."></th>
-				</tr>
+				
 				<tr>
 					<th colspan="2">닉네임</th>
 					<th colspan="2"><input type="text" name="nick"
@@ -47,8 +42,9 @@
 					<th colspan="2" ><textarea name="content" id="content" cols="300" rows="20"></textarea></th>
 				</tr>
 				<tr align="right">
-					<th colspan="4"><input type="button"
-						onclick="submitContents();" id="save" value="게시글 등록"></th>
+					<th colspan="4"><input type="button" onclick="submitContents();" id="save" value="게시글 등록">
+					&nbsp;<input type="button" onclick="location.href='list.jsp'" value="취소">
+					</th>
 				</tr>
 			</table>
 		</form>
