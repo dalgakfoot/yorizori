@@ -10,6 +10,7 @@ import org.apache.commons.fileupload.FileUpload;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.care.board_service.BoardService;
@@ -67,7 +68,7 @@ public class MainController {
 		return "redirect:board";
 	}
 	
-	@RequestMapping("board_modify")
+	@RequestMapping(value="board_modify", method=RequestMethod.GET)
 	public String board_modify(HttpServletRequest request, Model model) {
 		model.addAttribute("request",request);
 		bs = new Board_ModiViewImpl();
@@ -88,6 +89,7 @@ public class MainController {
 	
 	@RequestMapping("modiSave")
 	public String modiSave(HttpServletRequest request, Model model) {
+		
 		model.addAttribute("request",request);
 		bs = new Board_ModiSaveImpl();
 		int result = bs.execute(model);

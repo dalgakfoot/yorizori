@@ -56,6 +56,7 @@
       <div class="col-xs-6" align="center">
         <img src="img/yorijori.png" style="height: 100%; padding-top: 10px; padding-bottom: 10px; cursor: pointer" onclick="location.href='#'">
       </div>
+      
 
       <div class="col-xs-3">
         <ul class="nav navbar-nav navbar-right" style="padding-top:25px;">

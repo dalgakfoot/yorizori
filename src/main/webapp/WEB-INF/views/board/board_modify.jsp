@@ -13,12 +13,14 @@
 </head>
 <body>
 <fmt:requestEncoding value="utf-8" />
+
 	<div align="center">
 	<form action="modiSave" id="form">
+	<input type="hidden" value="${view.num}" name="num">
 		<h1>게시글 수정</h1>
 		<table border="1">
 		<tr align="right">
-		<input type="hidden" value="${view.num}" name="num">
+		
 				<th colspan="4" >조회수 &nbsp;[${view.hit}] &nbsp;|&nbsp; 등록 날짜 &nbsp;[${view.pdate }]</th>
 			</tr>
 			<tr>
@@ -35,7 +37,7 @@
 				<th colspan="2"><textarea name="content" id="content" cols="100" rows="20">${view.content}</textarea></th>
 			</tr>
 			<tr align="right">
-				<th colspan="4"><input type="button" onclick="submitContents();" value="게시글 수정"></th>
+				<th colspan="4"><input type="button" onclick="submitContents();" id="save" value="게시글 수정"></th>
 			</tr>
 		</table>
 		</form>
@@ -52,8 +54,8 @@ htParams : {bUseToolbar : true,
 	bUseVerticalResizer : true,	
 	bUseModeChanger : true,	
 	fOnBeforeUnload : function(){ } }, 
-	fOnAppLoad : function() {
-		oEditors.getById["content"].exec("PASTE_HTML",[""]);},
+	/* fOnAppLoad : function() {
+		oEditors.getById["content"].exec("PASTE_HTML",[""]);}, */
 fCreator: "createSEditor2"
 });
 
@@ -61,7 +63,7 @@ function submitContents() {
     oEditors.getById["content"].exec("UPDATE_CONTENTS_FIELD", []); // 에디터의 내용이 textarea에 적용됨
    	document.getElementById("form").submit();
     console.log("수정완료");
-    location.href="board_list";
+    
     }
 
 

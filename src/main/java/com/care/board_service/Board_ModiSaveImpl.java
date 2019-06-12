@@ -18,13 +18,17 @@ public class Board_ModiSaveImpl implements BoardService{
 		Map<String, Object> map = model.asMap();
 		HttpServletRequest request = (HttpServletRequest) map.get("request");
 		
+	
+		
 		BoardDTO dto = new BoardDTO();
 		
 		dto.setNum(Integer.parseInt(request.getParameter("num")));
 		dto.setTitle(request.getParameter("title"));
 		dto.setContent(request.getParameter("content"));
 		
+	
 		int result = dao.modiSave(dto);
+
 		return result;
 	}
 
