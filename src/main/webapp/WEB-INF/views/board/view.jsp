@@ -11,7 +11,7 @@
 <table border="1">
 <tr>
 <td>작성자</td>
-<td colspan="2">${view.nick }"</td>
+<td colspan="2">${view.nick }</td>
 </tr>
 <tr>
 <td>제목</td>
@@ -33,5 +33,8 @@
 </td>
 </tr>
 </table>
+
+<c:import url="../reply/reply_write.jsp"/>
+
 </body>
 </html>
