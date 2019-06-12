@@ -38,4 +38,23 @@
 	
 	<mvc:resources location="/smarteditor/" mapping="smarteditor/**"/>
 	
+	<!-- 메일 보내기 -->
+	<beans:bean id="javaMailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<beans:property name="host" value="smtp.gmail.com"/>
+		<beans:property name="port" value="587" />
+		<beans:property name="username" value="seokrae533@gmail.com" />
+		<beans:property name="password" value="tjr11646156" />
+	
+		<beans:property name="javaMailProperties">
+			<beans:props>
+				<beans:prop key="mail.smtp.ssl.trust">smtp.gmail.com</beans:prop>
+				<beans:prop key="mail.smtp.starttls.enable">true</beans:prop>
+				<beans:prop key="mail.smtp.auth">true</beans:prop>
+			</beans:props>
+		</beans:property>
+	</beans:bean>
+	<beans:bean id="mailService" class="com.care.member_service.MailServiceImpl"></beans:bean>
+	
+	<context:component-scan base-package="com.care.controller" />
+	
 </beans:beans>
