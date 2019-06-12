@@ -111,6 +111,7 @@ public class BoardDAO {
 			ps.setString(2, dto.getTitle());
 			ps.setString(3, dto.getContent());
 			result = ps.executeUpdate();
+			System.out.println("result : "+result);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}	
