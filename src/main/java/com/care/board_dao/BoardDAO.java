@@ -165,8 +165,24 @@ public class BoardDAO {
 		return result;
 		
 	}
+
+
 	
 	//삭제
+	public int delete(int num) {
+		String sql = "delete from final_board where num=?";
+		
+		try {
+			con = DriverManager.getConnection(url,user,pwd);
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, num);
+			ps.execute();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return 0;
+	}
 	
 	//검색
 	
