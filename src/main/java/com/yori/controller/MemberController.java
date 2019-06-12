@@ -62,14 +62,7 @@ public class MemberController {
 	}
 	
 	
-	@RequestMapping(value = "/register", method = RequestMethod.POST)
-	public String RegisterPost(UserVO user, Model model, RedirectAttributes rttr, HttpServletRequest request, HttpSession session) throws Exception {
-		logger.info("회원가입...");
-		logger.info(user.toString());
-		service.create(user);
-		rttr.addFlashAttribute("authmsg" , "가입시 사용한 이메일로 인증해주 3");
-		return "redirect:/";
-	}
+	
 	
 
 

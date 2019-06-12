@@ -35,12 +35,7 @@ public class HomeController {
 		
 		return "home";	
 	}
-<<<<<<< HEAD
-	@RequestMapping("/board_write")
-	public String write() {
-		return "board/board_write";
-	}
-=======
->>>>>>> c3a8270de092fea86a10666f73f885590903b856
+
+	
 	
 }

@@ -18,6 +18,7 @@
 			id 입력 : <input type="text" placeholder="이메일을 입력해주세요"><br>
 			pw 입력 : <input type="text" placeholder="비밀번호 입력"><br> 
 			pw 확인 : <input type="text" placeholder="비밀번호 확인"><br> 
+			
 			<input type="submit" value="회원가입" class="btn">
 		</form>
 	</div>

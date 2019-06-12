@@ -1,14 +1,14 @@
-<<<<<<< HEAD
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
     
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-=======
-<%@ page language="java" contentType="text/html; charset=UTF-8"%>
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
->>>>>>> 5c47eae00c640b3d9eced1ce91b8e898fab161e7
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,9 +23,6 @@
 </head>
 <body>
 <<<<<<< HEAD
-=======
-
->>>>>>> 5c47eae00c640b3d9eced1ce91b8e898fab161e7
 
 	<div>
 		
@@ -42,20 +39,20 @@
 			</tr>
 			
 			<tr>
-<<<<<<< HEAD
-				<td colspan="2"><a href="register_form">х╦©Ь ╟║ют</a></td>
-=======
-				<td colspan="2"><a href="">М ▄Л⌡░ Й╟─Л·┘</a></td>
->>>>>>> 5c47eae00c640b3d9eced1ce91b8e898fab161e7
-			</tr>
+
+				<td colspan="2"><a href="register_form">М ▄Л⌡░Й╟─Л·┘</a></td>
+
+				
+
+</tr>
 		
 		</table>
 		</form>
 	
 	</div>
 
-<<<<<<< HEAD
-=======
+
+
 
 	<c:import url="../default/header.jsp" />
 	<div align="center">
