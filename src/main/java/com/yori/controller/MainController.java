@@ -1,11 +1,16 @@
 package com.yori.controller;
 
+import java.io.File;
+import java.util.Calendar;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.apache.commons.fileupload.FileUpload;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.care.board_service.BoardService;
 import com.care.board_service.Board_ListImpl;
@@ -13,6 +18,7 @@ import com.care.board_service.Board_ModiSaveImpl;
 import com.care.board_service.Board_ModiViewImpl;
 import com.care.board_service.Board_SaveImpl;
 import com.care.board_service.Board_ViewImpl;
+import com.oreilly.servlet.MultipartRequest;
 
 @Controller
 public class MainController {
@@ -31,7 +37,7 @@ public class MainController {
 	}
 
 	
-	//.......................ÀÚÀ¯°Ô½ÃÆÇ ½ÃÀÛ.............................
+	//.......................ììœ ê²Œì‹œíŒ ì‹œì‘.............................
 	@RequestMapping("board_list")	 	
 	public String board(Model model) {	
 		bs = new Board_ListImpl();
@@ -48,7 +54,7 @@ public class MainController {
 		return "/board/board_write";
 	}
 	
-	@RequestMapping("view")   // ÇØ´ç°Ô½Ã±Û º¸±â
+	@RequestMapping("view")   // í•´ë‹¹ê²Œì‹œê¸€ ë³´ê¸°
 	public String view(HttpServletRequest request, Model model) {
 		model.addAttribute("request",request);
 		bs = new Board_ViewImpl();
@@ -92,25 +98,30 @@ public class MainController {
 		return "redirect:board_list";
 	}
 	
-	//.......................ÀÚÀ¯°Ô½ÃÆÇ ³¡.............................
+	//.......................ììœ ê²Œì‹œíŒ ë.............................
 	
 	
 	
-	//.......................·¹½ÃÇÇ°Ô½ÃÆÇ ½ÃÀÛ..........................
+	//.......................ë ˆì‹œí”¼ê²Œì‹œíŒ ì‹œì‘..........................
 	
-	//.......................·¹½ÃÇÇ°Ô½ÃÆÇ ³¡............................
-	
-	
+	//.......................ë ˆì‹œí”¼ê²Œì‹œíŒ ë............................
 	
 	
-	//.......................´ñ±Û ½ÃÀÛ ..............................
+	
+	
+	//.......................ëŒ“ê¸€ ì‹œì‘ ..............................
 	@RequestMapping("reply_save")
 	public String reply_save() {
 		return "/reply/reply_list";
 	}
-	//.......................´ñ±Û ³¡ ..............................
+	//.......................ëŒ“ê¸€ ë ..............................
 	
+
 	
+	@RequestMapping(value= "/fileUpDown")
+	public String fileUD() {
+		return "yorizori/src/main/webapp/smarteditor/photo_uploader/popup/photo_uploader.jsp";
+	}
 	
 	
 }
