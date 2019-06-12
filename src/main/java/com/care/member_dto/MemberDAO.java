@@ -1,35 +1,64 @@
 package com.care.member_dto;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.care.member_dao.MemberDTO;
 import com.care.template.Constant;
 
-public class MemberDAO {
 
-	public final int CHK_OK = 0;
-	public final int CHK_NO = 1;
+public class MemberDAO {
+		
+	private String url="jdbc:oracle:thin:@192.168.137.150:1521:xe";
+	private String user = "jsp";
+	private String pwd = "1234";
+	private Connection con;
+	private PreparedStatement ps;
+	private ResultSet rs;
 	
-	private JdbcTemplate template;
+	
 	
 	public MemberDAO() {
-		this.template = Constant.template;
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	//유저 체크
 	public int userCheck(String id, String pw) { 
-		String sql = "select * from final_member where id='"+id+"' ";
-		MemberDTO dto = null;
+		String sql = "select * from final_member where id = ?";
+		int chk = 1;
 		try {
-			dto = template.queryForObject(sql,
-					new BeanPropertyRowMapper<MemberDTO>(MemberDTO.class));
-		}catch(Exception e) {
-			return CHK_NO;  //0
+			con = DriverManager.getConnection(url,user,this.pwd);
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			if(rs.next()) {
+				if(rs.getString("pw").equals(pw)) {
+					chk = 0;
+				}else { return chk = 1; }
+			}else { return chk = 1; }
+		} catch (SQLException e) {
+			e.printStackTrace();
 		}
-		if(dto != null && dto.getPw().equals(pw))
-			return CHK_OK; //1
-		return CHK_NO; //0
-		
+		return chk;
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
 }

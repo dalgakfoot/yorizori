@@ -1,2 +1,6 @@
 eclipse.preferences.version=1
+<<<<<<< HEAD
+encoding//src/main/webapp/WEB-INF/views/member/login.jsp=UTF-8
+=======
 encoding//src/main/java/com/yori/controller/MainController.java=UTF-8
+>>>>>>> 29cfb5e8511e671e8264d32f733ec9f002a6f9ef

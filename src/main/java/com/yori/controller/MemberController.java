@@ -9,8 +9,11 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.care.member_dao.MemberDTO;
 import com.care.member_service.MUserCheckImpl;
+import com.care.member_service.MemberRegisterImpl;
 import com.care.member_service.MemberService;
 import com.care.template.Constant;
 
@@ -47,10 +50,24 @@ public class MemberController {
 		return "redirct:login";
 	}
 	
+	@RequestMapping("/successLogin")
+	public String successLogin() {
+		return "member/successLogin";
+	}
+	
+	@RequestMapping("/register_form")
+	public String reister_from() {
+		System.out.println("resister_form ½ÇÇà");
+		return "member/register";
+	}
+	
+	
 	
 	
 
 
+	
+	
 
 
 }

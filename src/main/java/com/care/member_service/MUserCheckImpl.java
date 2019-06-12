@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.ui.Model;
 
+import com.care.member_dao.MemberDTO;
 import com.care.member_dto.MemberDAO;
 
 public class MUserCheckImpl implements MemberService{
@@ -24,5 +25,10 @@ public class MUserCheckImpl implements MemberService{
 		
 		return dao.userCheck(id,pw);
 	}
+
+	
+	
+
+	
 
 }

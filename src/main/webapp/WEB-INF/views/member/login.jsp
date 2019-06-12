@@ -1,6 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"%>
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+
+
+
+
 
 <!DOCTYPE html>
 <html>
@@ -15,7 +22,7 @@
 
 </head>
 <body>
-
+<<<<<<< HEAD
 
 	<div>
 		
@@ -32,13 +39,19 @@
 			</tr>
 			
 			<tr>
-				<td colspan="2"><a href="">회원 가입</a></td>
-			</tr>
+
+				<td colspan="2"><a href="register_form">회원가입</a></td>
+
+				
+
+</tr>
 		
 		</table>
 		</form>
 	
 	</div>
+
+
 
 
 	<c:import url="../default/header.jsp" />
@@ -62,5 +75,6 @@
 </div>
 <c:import url="../default/footer.jsp" />
 
+>>>>>>> 5c47eae00c640b3d9eced1ce91b8e898fab161e7
 </body>
 </html>
