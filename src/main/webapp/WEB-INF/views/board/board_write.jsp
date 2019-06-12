@@ -22,7 +22,7 @@
 <body>
 	<!-- 게시글 등록 페이지, 닉네임 제목 내용 조회수 날짜 -->
 	<div align="center">
-		<form action="writeSave" id="form">
+		<form action="writeSave" id="form" name="form">
 			<h1>게시글 등록</h1>
 			<table border="1">
 				
@@ -42,7 +42,7 @@
 					<th colspan="2" ><textarea name="content" id="content" cols="100" row="20"></textarea></th>
 				</tr>
 				<tr align="right">
-					<th colspan="4"><input type="button" onclick="submitContents();" id="save" value="게시글 등록">
+					<th colspan="4"><input type="button" onclick="submitContents();" id="save" name="save" value="게시글 등록">
 					&nbsp;<input type="button" onclick="location.href='list.jsp'" value="취소">
 					</th>
 				</tr>
@@ -64,12 +64,17 @@
 		fCreator: "createSEditor2"
 		});
 		
-		function submitContents(elClickedObj) {
-		    oEditors.getById["content"].exec("UPDATE_CONTENTS_FIELD", []); // 에디터의 내용이 textarea에 적용됨
-		   /* 	document.getElementById("form").submit();} */
+		function submitContents() {
+		   //var forms = document.form;
+			oEditors.getById["content"].exec("UPDATE_CONTENTS_FIELD", []); // 에디터의 내용이 textarea에 적용됨
+		   document.getElementById("form").submit();
+		   
+			location.href="board_list";
 		   
 		   try{ 
-			   elClickedObj.form.submit;
+			   //forms.submit();
+			  //elClickedObj.form.submit();
+			   console.log("확인");
 		   }catch(e){
 			   
 		   }
