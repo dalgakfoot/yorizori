@@ -175,12 +175,12 @@ public class BoardDAO {
 		try {
 			con = DriverManager.getConnection(url,user,pwd);
 			ps = con.prepareStatement(sql);
-
+			ps.setInt(1, num);
+			ps.execute();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 		return 0;
 	}
 	
