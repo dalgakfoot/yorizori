@@ -14,8 +14,8 @@
 	charset="utf-8"></script> -->
 <script type="text/javascript"
 	src="/yorizori/src/main/webapp/smarteditor/photo_uploader/plugin/hp_SE2M_AttachQuickPhoto.js"
-	charset="utf-8"></script>
-<link href="style.css" rel="stylesheet">
+	></script>
+
 </head>
 <fmt:requestEncoding value="utf-8" />
 
@@ -27,7 +27,7 @@
 			<table border="1">
 				
 				<tr>
-					<th colspan="2">닉네임</th>
+					<th colspan="2">작성자</th>
 					<th colspan="2"><input type="text" name="nick"
 						placeholder="닉네임 받아오는 곳" size="100"></th>
 				</tr>
@@ -68,8 +68,8 @@
 		   //var forms = document.form;
 			oEditors.getById["content"].exec("UPDATE_CONTENTS_FIELD", []); // 에디터의 내용이 textarea에 적용됨
 		   document.getElementById("form").submit();
-		   
-			location.href="board_list";
+		   console.log("form 넘어가기");
+			//location.href="board_list";
 		   
 		   try{ 
 			   //forms.submit();

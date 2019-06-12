@@ -11,23 +11,26 @@
 <table border="1">
 <tr>
 <td>작성자</td>
-<td colspan="2"><input type="text" value="${view.nick }"></td>
+<td colspan="2">${view.nick }"</td>
 </tr>
 <tr>
 <td>제목</td>
-<td colspan="2"><input type="text" value="${view.title }"></td>
+<td colspan="2">${view.title }</td>
 </tr>
 <tr>
 <td>내용</td>
-<td colspan="2"><textarea rows="4">${view.content}</textarea>
+<td colspan="2">${view.content}</td>
 </tr>
 
 <tr>
-<td>닉네임</td>
-<td><input type="text"></td>
-<td><button type="button">쓰기</button></td>
-<td><button type="button" onclick="location.href='board_modify?num=${view.num}'">수정</button>
-<button type="button" onclick="">삭제</button></td>
+<td align="right" colspan="4">
+<button type="button" onclick="location.href='board_write'">글작성</button>
+<%--  <c:if test="sessionScope != null "> --%>
+<button type="button" onclick="location.href='board_modify?num=${view.num}'">수정</button>
+<button type="button" onclick="">삭제</button>
+<%--  </c:if> --%>
+
+</td>
 </tr>
 </table>
 </body>

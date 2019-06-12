@@ -12,7 +12,7 @@ import com.care.board_dto.BoardDTO;
 public class BoardDAO {
 	
 	private String driver = "oracle.jdbc.driver.OracleDriver";
-	private String url = "jdbc:oracle:thin:@192.168.60.128:1521:xe";
+	private String url = "jdbc:oracle:thin:@192.168.28.135:1521:xe";
 	private String user = "jsp";
 	private String pwd ="1234";
 	private Connection con;
@@ -149,7 +149,8 @@ public class BoardDAO {
 	//수정저장
 	public int modiSave(BoardDTO dto) {
 		String sql = "update final_board set title=?, content=? where num=?";
-		
+		System.out.println("수정 제목 : "+dto.getTitle());
+		System.out.println("수정 내용 : "+dto.getContent());
 		int result=0;
 		try {
 			con = DriverManager.getConnection(url,user,pwd);
@@ -158,6 +159,7 @@ public class BoardDAO {
 			ps.setString(2, dto.getContent());
 			ps.setInt(3, dto.getNum());
 			result = ps.executeUpdate();
+			System.out.println("수정 결과 : "+result);
 		}catch (SQLException e) {
 			e.printStackTrace();
 		}	
