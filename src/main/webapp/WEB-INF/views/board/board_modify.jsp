@@ -6,19 +6,65 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>Insert title here</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<title>글 수정</title>
 <script type="text/javascript" src="<%=request.getContextPath()%>/smarteditor/js/HuskyEZCreator.js" charset="utf-8"></script>
 <script type="text/javascript" src="/yorizori/src/main/webapp/smarteditor/photo_uploader/plugin/hp_SE2M_AttachQuickPhoto.js"></script>
 
 </head>
 <body>
 <fmt:requestEncoding value="utf-8" />
+<!--메뉴바 시작-->
+<div class="row">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid" >
+      <div class="col-xs-3">
+        <ul class="nav navbar-nav" style="padding-top:25px;">
+          <li><a href="#">레시피</a></li>
+          <li><a href="#">자유게시판</a></li>
+          <li><a href="#">?.?</a></li>
+        </ul>
+      </div>
 
-	<div align="center">
+      <div class="col-xs-6" align="center">
+        <img src="img/yorijori.png" style="height: 100%; padding-top: 10px; padding-bottom: 10px; cursor: pointer" onclick="location.href='#'">
+      </div>
+
+      <div class="col-xs-3">
+        <ul class="nav navbar-nav navbar-right" style="padding-top:25px;">
+          <li><a href="#"><span class="glyphicon glyphicon-user"></span> 회원가입</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> 로그인</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+</div>
+<!--메뉴바 끝-->
+
+<!--검색 창-->
+<div align="center" style="padding-top: 20px">
+  <form class="form-inline">
+    <div class="form-group row">
+      <input type="text" class="form-control" style="width:1000px">
+    </div>
+    <button type="submit" class="btn btn-success">검색</button>
+  </form>
+</div>
+
+<br>
+
+<!--검색 창 끝-->
+
+<!-- 게시글 등록 페이지, 닉네임 제목 내용 조회수 날짜 -->
+<div class="container-fluid">
+	<div class="table-responsive">
 	<form action="modiSave" id="form">
 	<input type="hidden" value="${view.num}" name="num">
-		<h1>게시글 수정</h1>
-		<table border="1">
+		<table class="table">
 		<tr align="right">
 		
 				<th colspan="4" >조회수 &nbsp;[${view.hit}] &nbsp;|&nbsp; 등록 날짜 &nbsp;[${view.pdate }]</th>
@@ -41,6 +87,7 @@
 			</tr>
 		</table>
 		</form>
+		</div>
 	</div>
 
 	<script type="text/javascript">
