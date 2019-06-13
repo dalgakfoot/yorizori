@@ -14,8 +14,7 @@
 <title>글쓰기</title>
 <script type="text/javascript" src="<%=request.getContextPath()%>/smarteditor/js/HuskyEZCreator.js" charset="utf-8"></script>
 
-<script type="text/javascript"
-	src="/yorizori/src/main/webapp/smarteditor/photo_uploader/plugin/hp_SE2M_AttachQuickPhoto.js"></script>
+<script type="text/javascript"  src="/yorizori/src/main/webapp/smarteditor/photo_uploader/plugin/hp_SE2M_AttachQuickPhoto.js"></script>
 
 </head>
 <fmt:requestEncoding value="utf-8" />
@@ -87,9 +86,9 @@
 							style="width:100%;height:500px;"></textarea></th>
 				</tr>
 				<tr align="right">
-					<th colspan="4"><input type="button"
+					<th colspan="4"><input type="button" class="btn btn-success"
 						onclick="submitContents();" id="save" name="save" value="게시글 등록">
-						&nbsp;<input type="button" onclick="location.href='list.jsp'"
+						&nbsp;<input type="button" class="btn btn-success" onclick="location.href='list.jsp'"
 						value="취소"></th>
 				</tr>
 			</table>
@@ -116,7 +115,6 @@
 			oEditors.getById["content"].exec("UPDATE_CONTENTS_FIELD", []); // 에디터의 내용이 textarea에 적용됨
 		   document.getElementById("form").submit();
 		   console.log("form 넘어가기");
-			//location.href="board_list";
 		   
 		   try{ 
 			   //forms.submit();

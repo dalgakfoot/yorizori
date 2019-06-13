@@ -84,7 +84,10 @@ public class MainController {
 		if(result==0) {
 			return "redirect:board_write";
 		}
-		return "/board/list";
+		return "redirect:board_list";
+		// return "board/list" 로 되어 있어 redirect로 변경하였음
+		// 6/13 1008 김지선 씀
+	
 	}
 	
 	@RequestMapping("modiSave")
